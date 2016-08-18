@@ -1,0 +1,10 @@
+<% @interpreters.each do |inter| %>
+	<p><%= link_to inter.name, interpreter_path(inter) %>
+	<% if current_editor.present? %>
+	<%= link_to "Edit interpreter", edit_interpreter_path(inter) %></p>
+	<%end%>
+<%end%>
+<br/>
+<% if current_editor.present? %>
+<%= link_to "Create new interpreter", new_interpreter_path %>
+<%end%>

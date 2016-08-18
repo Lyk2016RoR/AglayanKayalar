@@ -1,0 +1,10 @@
+<%= form_for @author do |author| %>
+	<p><%= author.label :name %><br/>
+	<%= author.text_field :name, placeholder: 'surname' %><br/><br/>
+	<%= author.label :surname %><br/>
+	<%= author.text_field :surname, placeholder: 'surname' %><br/><br/>
+	<%= author.label :Biography %><br/>
+	<%= author.text_area :biography, placeholder: 'biography', rows: 10%><br/><br/>
+	</p>
+	<%= author.submit 'Gonder'%>
+<%end%>

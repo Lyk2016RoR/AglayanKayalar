@@ -1,0 +1,5 @@
+<%= form_for @publisher do |publish| %>
+	<%= publish.label :name %><br>
+	<%= publish.text_field :name, placeholder: 'publisher' %><br><br>
+	<%= publish.submit 'Gonder'%>
+<%end%>

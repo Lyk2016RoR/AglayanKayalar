@@ -1,0 +1,12 @@
+<% @authors.each do |aut| %>
+	<p><b>Name: </b><%= link_to aut.name, author_path(aut) %>
+	   <b>Surname:</b> <%= aut.surname %>
+	   <b>Biography: </b> <%= aut.biography %>
+	<% if current_editor.present? %>
+	<%= link_to "Edit author", edit_author_path(aut) %></p>
+	<%end%>
+<%end%>
+<br/>
+<% if current_editor.present? %>
+<%= link_to "Create new author", new_author_path %>
+<%end%>

@@ -1,0 +1,5 @@
+<%= form_for @interpreter do |inter| %>
+	<%= inter.label :name %><br>
+	<%= inter.text_field :name, placeholder: 'interpreter' %><br><br>
+	<%= inter.submit 'Gonder'%>
+<%end%>

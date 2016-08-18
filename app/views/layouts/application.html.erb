@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Howtobook</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <% if current_editor.present? %>
+      <li><a href="#"><%= current_editor.email %></a></li>
+      <li><%= link_to "Logout", destroy_editor_session_path,  class: 'btn btn-success', method: :delete %></li>
+    <% else %>
+      <li><%= link_to "Login", new_editor_session_path, class: 'btn btn-success' %></li>
+      <li><%= link_to "Register", new_editor_registration_path,  class: 'btn btn-success' %></li>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+<b>Name:  </b> <%= @publisher.name %> <br/>
+
+<% if current_editor.present? %>
+<%= link_to "Delete publisher", publisher_path(@publisher), method: :delete, data:{confirm: "Emin misiniz?"} %>
+<%end%>

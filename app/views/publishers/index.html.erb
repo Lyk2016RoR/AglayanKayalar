@@ -1,0 +1,10 @@
+<% @publishers.each do |publish| %>
+	<p><%= link_to publish.name, publisher_path(publish) %>
+	<% if current_editor.present? %>
+	<%= link_to "Edit publisher", edit_publisher_path(publish) %> </p>
+	<%end%>
+<%end%>
+<br/>
+<% if current_editor.present? %>
+<%= link_to "Create new publisher", new_publisher_path %>
+<%end%>
