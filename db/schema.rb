@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818092809) do
+ActiveRecord::Schema.define(version: 20160818135012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20160818092809) do
     t.integer "book_id",   null: false
     t.index ["author_id", "book_id"], name: "index_authors_books_on_author_id_and_book_id", using: :btree
     t.index ["book_id", "author_id"], name: "index_authors_books_on_book_id_and_author_id", using: :btree
+  end
+
+  create_table "book_comments", force: :cascade do |t|
+    t.string   "body"
+    t.integer  "rating"
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_book_comments_on_book_id", using: :btree
+    t.index ["user_id"], name: "index_book_comments_on_user_id", using: :btree
   end
 
   create_table "books", force: :cascade do |t|
@@ -105,6 +116,8 @@ ActiveRecord::Schema.define(version: 20160818092809) do
 
   add_foreign_key "author_comments", "authors"
   add_foreign_key "author_comments", "users"
+  add_foreign_key "book_comments", "books"
+  add_foreign_key "book_comments", "users"
   add_foreign_key "books", "categories"
   add_foreign_key "books", "interpreters"
   add_foreign_key "books", "publishers"
