@@ -3,6 +3,5 @@ class Book < ApplicationRecord
   belongs_to :author
   belongs_to :publisher
   belongs_to :interpreter
-
-  has_many :bookcomments
+  has_many :bcomments
 end

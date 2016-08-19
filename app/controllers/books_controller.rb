@@ -49,10 +49,6 @@ class BooksController < ApplicationController
   	end
 
   	def load_data
-  		#@categories = Category.all
-  		#@publishers = Publisher.all
-  		#@interpreters = Interpreter.all
-  		#@authors = Author.all
   		@categories = Category.all.collect {|c| [c.title, c.id]}
   		@publishers = Publisher.all.collect {|c| [c.name, c.id]}
   		@interpreters = Interpreter.all.collect {|c| [c.name, c.id]}

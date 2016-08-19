@@ -2,10 +2,12 @@
 
 one:
   body: MyText
-  author: one
+  rating: 1
   user: one
+  author: one
 
 two:
   body: MyText
-  author: two
+  rating: 1
   user: two
+  author: two

@@ -1,4 +1,4 @@
-class BookComment < ApplicationRecord
+class Bcomment < ApplicationRecord
   belongs_to :user
   belongs_to :book
 end

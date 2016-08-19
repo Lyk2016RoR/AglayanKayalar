@@ -7,7 +7,13 @@
 <b>Publisher </b><%= link_to @book.publisher.name, publisher_path(@book.publisher_id) %>
 <b>ISBN:</b> <%= @book.ISBN %>
 <b>Publication Year: </b> <%= @book.publication_year %>
+<br/><br/>
 
+<b>Comments</b>
+<%= render 'bcomments/comment_list' %>
+<br/><br/>
+<b>New Comment</b>
+<%= render 'bcomments/comment_form' %>
 <% if current_editor.present? %>
 <%= link_to "Delete author", book_path(@book), method: :delete, data:{confirm: "Emin misiniz?"} %>
 <%end%>

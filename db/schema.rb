@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818171051) do
+ActiveRecord::Schema.define(version: 20160819082944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "author_comments", force: :cascade do |t|
+  create_table "acomments", force: :cascade do |t|
     t.text     "body"
-    t.integer  "author_id"
+    t.integer  "rating"
     t.integer  "user_id"
+    t.integer  "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_author_comments_on_author_id", using: :btree
-    t.index ["user_id"], name: "index_author_comments_on_user_id", using: :btree
+    t.index ["author_id"], name: "index_acomments_on_author_id", using: :btree
+    t.index ["user_id"], name: "index_acomments_on_user_id", using: :btree
   end
 
   create_table "authors", force: :cascade do |t|
@@ -33,15 +34,15 @@ ActiveRecord::Schema.define(version: 20160818171051) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "book_comments", force: :cascade do |t|
-    t.text     "body"
-    t.integer  "rating"
+  create_table "bcomments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "book_id"
+    t.text     "body"
+    t.integer  "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_book_comments_on_book_id", using: :btree
-    t.index ["user_id"], name: "index_book_comments_on_user_id", using: :btree
+    t.index ["book_id"], name: "index_bcomments_on_book_id", using: :btree
+    t.index ["user_id"], name: "index_bcomments_on_user_id", using: :btree
   end
 
   create_table "books", force: :cascade do |t|
@@ -115,10 +116,10 @@ ActiveRecord::Schema.define(version: 20160818171051) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "author_comments", "authors"
-  add_foreign_key "author_comments", "users"
-  add_foreign_key "book_comments", "books"
-  add_foreign_key "book_comments", "users"
+  add_foreign_key "acomments", "authors"
+  add_foreign_key "acomments", "users"
+  add_foreign_key "bcomments", "books"
+  add_foreign_key "bcomments", "users"
   add_foreign_key "books", "authors"
   add_foreign_key "books", "categories"
   add_foreign_key "books", "interpreters"

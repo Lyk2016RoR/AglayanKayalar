@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BookCommentTest < ActiveSupport::TestCase
+class BookcommentsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

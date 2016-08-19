@@ -71,11 +71,19 @@ publication_year: "1980-08-08", ISBN: 687997, category_id: 5, publisher_id: 5, i
 Book.create(name: "Çocuk Kitabı", description: "Çocuk Özeti", page_count: 850,
 publication_year: "2000-08-11", ISBN: 456123, category_id: 6, publisher_id: 4, interpreter_id: 1, author_id: 6)
 
-BookComment.create(body: "Süper Kitap" , user_id: 1 , book_id: 1)
-BookComment.create(body: "Kötü Kitap" , user_id: 2 , book_id: 2)
-BookComment.create(body: "İdare eder Kitap" , user_id: 1 , book_id: 3)
-BookComment.create(body: "Eh işte Kitap" , user_id: 2 , book_id: 4)
-BookComment.create(body: "Berbat Kitap" , user_id: 2 , book_id: 5)
-BookComment.create(body: "Omg Kitap" , user_id: 1 , book_id: 6)
-BookComment.create(body: "Dandik Kitap" , user_id: 2 , book_id: 1)
+Bcomment.create(body: "Süper Kitap" , user_id: 1 , book_id: 1)
+Bcomment.create(body: "Kötü Kitap" , user_id: 2 , book_id: 2)
+Bcomment.create(body: "İdare eder Kitap" , user_id: 1 , book_id: 3)
+Bcomment.create(body: "Eh işte Kitap" , user_id: 2 , book_id: 4)
+Bcomment.create(body: "Berbat Kitap" , user_id: 2 , book_id: 5)
+Bcomment.create(body: "Omg Kitap" , user_id: 1 , book_id: 6)
+Bcomment.create(body: "Dandik Kitap" , user_id: 2 , book_id: 1)
 
+
+Acomment.create(body: "Süper Kitap" , user_id: 1 , author_id: 1)
+Acomment.create(body: "Kötü Kitap" , user_id: 2 , author_id: 2)
+Acomment.create(body: "İdare eder Kitap" , user_id: 1 , author_id: 3)
+Acomment.create(body: "Eh işte Kitap" , user_id: 2 , author_id: 4)
+Acomment.create(body: "Berbat Kitap" , user_id: 2 , author_id: 5)
+Acomment.create(body: "Omg Kitap" , user_id: 1 , author_id: 6)
+Acomment.create(body: "Dandik Kitap" , user_id: 2 , author_id: 1)

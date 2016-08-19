@@ -1,0 +1,7 @@
+<% if current_user.present? %>
+<%= form_for [@author, @author.acomments.build] do |f| %>
+	<%= f.label :Comment%><br>
+	<%= f.text_area :body, placeholder: 'comment', rows: 10 %><br><br>
+	<%= f.submit 'Gonder'%>
+<% end %>
+<%end%>

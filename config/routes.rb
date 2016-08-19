@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+	root "books#index"
   devise_for :editors
   devise_for :users
 
   resources :interpreters
   resources :publishers
-  resources :authors
-  resources :books
+  resources :authors do
+  resources :acomments, only: [:index, :create, :destroy]
+end
+  resources :books do
+  resources :bcomments, only: [:index, :create, :destroy]
+  end
+  
 end
