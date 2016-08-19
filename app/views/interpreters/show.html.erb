@@ -1,4 +1,5 @@
 <b>Name: </b> <%= @interpreter.name %><br/><br/>
+
 <% if current_editor.present? %>
 <%= link_to "Delete interpreter", interpreter_path(@interpreter), method: :delete, data:{confirm: "Emin misiniz?"} %>
 <%end%>
