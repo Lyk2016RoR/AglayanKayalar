@@ -1,4 +1,4 @@
-class Wishlist < ApplicationRecord
+class Okunmuspirinc < ApplicationRecord
   belongs_to :user
   belongs_to :book
 

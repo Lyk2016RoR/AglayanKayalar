@@ -8,12 +8,13 @@
 <b>ISBN:</b> <%= @book.ISBN %>
 <b>Publication Year: </b> <%= @book.publication_year %>
 <br/><br/>
-
+<%= render 'wishlists/wis' %>
+<br/><br/>
+<%= render 'okunmuspirincs/pirinc_form' %>
 <b>Comments</b>
 <%= render 'bcomments/comment_list' %>
 <br/><br/>
-<b>New Comment</b>
 <%= render 'bcomments/comment_form' %>
 <% if current_editor.present? %>
-<%= link_to "Delete author", book_path(@book), method: :delete, data:{confirm: "Emin misiniz?"} %>
+<%= link_to "Delete book", book_path(@book), method: :delete, data:{confirm: "Emin misiniz?"} %>
 <%end%>

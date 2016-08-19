@@ -2,7 +2,7 @@ class BcommentsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_book
 	before_action :set_bcomment, only: [:destroy]
-	before_action :authorize_user!, only: [:destroy]
+	before_action :authorize_user!, only: [:create, :destroy]
 
 
 	def create 

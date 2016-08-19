@@ -1,3 +1,4 @@
+<b>New Comment</b><br/>
 <% if current_user.present? %>
 <%= form_for [@book, @book.bcomments.build] do |f| %>
 	<%= f.label :Comment%><br>

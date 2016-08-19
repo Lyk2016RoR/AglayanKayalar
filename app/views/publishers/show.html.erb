@@ -3,3 +3,7 @@
 <% if current_editor.present? %>
 <%= link_to "Delete publisher", publisher_path(@publisher), method: :delete, data:{confirm: "Emin misiniz?"} %>
 <%end%>
+<h1>Kitaplar</h1>
+<% @publisher.books.each do |b| %>
+	<p><%= link_to b.name, book_path(b) %>
+<%end%>

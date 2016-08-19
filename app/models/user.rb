@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :authorcomments
   has_many :wishlists
   has_many :wishes, through: :wishlists, source: :book
+  has_many :okunmuspirincs
+  has_many :okunmus, through: :okunmuspirincs, source: :book
 end

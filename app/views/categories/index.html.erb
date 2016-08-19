@@ -1,0 +1,10 @@
+<% @categories.each do |c| %>
+	<p><%= link_to c.title, category_path(c) %>
+	<% if current_editor.present? %>
+	<%= link_to "Edit category", edit_category_path(c) %></p>
+	<%end%>
+<%end%>
+<br/>
+<% if current_editor.present? %>
+<%= link_to "Create new category", new_category_path %>
+<%end%>

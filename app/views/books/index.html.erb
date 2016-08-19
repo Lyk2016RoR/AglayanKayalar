@@ -1,12 +1,20 @@
 <% @books.each do |book| %>
 	<p><b>Name: </b><%= link_to book.name, book_path(book) %>
 	   <b>Description:</b> <%= book.description %>
-	   <b>Category: </b> <%= book.category.title %>
+	   <b>Category: </b> <%=link_to book.category.title, category_path(book.category) %>
 	<% if current_editor.present? %>
 	<%= link_to "Edit book", edit_book_path(book) %></p>
 	<%end%>
 <%end%>
-<br/>
+<br/><br/><br/>
+
+<% if current_user.present? %>
+<%= link_to "Okumak istediğim pirinçler", mywishlist_books_path %>
+<%end%>
+<br/><br/><br/>
+<% if current_user.present? %>
+<%= link_to "Okuduğum  pirinçler", okudugumpirincler_books_path %>
+<%end%>
 <% if current_editor.present? %>
 <%= link_to "Create new book", new_book_path %>
 <%end%>

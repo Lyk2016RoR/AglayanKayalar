@@ -3,3 +3,7 @@
 <% if current_editor.present? %>
 <%= link_to "Delete interpreter", interpreter_path(@interpreter), method: :delete, data:{confirm: "Emin misiniz?"} %>
 <%end%>
+
+<% @interpreter.books.each do |b| %>
+	<p><%= link_to b.name, book_path(b) %>
+<%end%>

@@ -1,0 +1,6 @@
+<% if current_user.present? %>
+	<%= form_for current_user.okunmuspirincs.build, url: okunmuspirincs_path do |f| %>
+		<%= f.hidden_field :book_id, value: @book.id%>
+		<%= f.submit 'Okuduğum pirinç'%>
+	<% end %>
+<%end%>

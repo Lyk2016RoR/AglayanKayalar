@@ -1,23 +1,22 @@
 class WishlistsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_book
-	before_action :set_wishlist, only: [:create, :destroy]
+	before_action :set_wishlist, only: [:destroy]
 	before_action :authorize_user!, only: [:destroy]
 
 
 	def create 
-		@wishlist = Wishlist.new(wishlist_params)
-    	@wishlist.user = current_user
+		@wishlist = current_user.wishlists.build
+    	@wishlist.book_id = params[:wishlist][:book_id]
 		if @wishlist.save
-      		redirect_to books_path, notice: "Comment was saved"
+      		redirect_to mywishlist_books_path, notice: "Wishlist was saved"
     	else
-      		redirect_to books_path, notice: "Comment couldn't saved"
+      		redirect_to books_path, notice: "Wishlist couldn't saved"
     	end
 	end
 
 	def destroy
     	@wishlist.destroy
-    	redirect_to @wishlist, notice: "Comment was deleted"
+    	redirect_to @wishlist, notice: "Wishlist was deleted"
   	end
 
 	private
@@ -28,14 +27,6 @@ class WishlistsController < ApplicationController
 
 	def authorize_user!
   		redirect_to @wishlist, notice: "Not authorized" unless @wishlist.user_id == current_user.id
-	end
-
-	def bcomment_params
-  		params.require(:wishlist).permit()
-	end
-
-	def set_book
-  		@book = Book.find(params[:book_id])
 	end
 
 end

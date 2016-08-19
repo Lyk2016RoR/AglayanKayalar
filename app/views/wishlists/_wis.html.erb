@@ -1,0 +1,6 @@
+<% if current_user.present? %>
+	<%= form_for current_user.wishlists.build, url: wishlists_path do |f| %>
+		<%= f.hidden_field :book_id, value: @book.id%>
+		<%= f.submit 'Okumak istediğim pirinç'%>
+	<% end %>
+<%end%>
