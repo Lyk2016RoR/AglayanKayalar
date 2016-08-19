@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :editors
   devise_for :users
 
+
+  resources :wishlists, only: [:index, :create, :destroy] 
   resources :interpreters
   resources :publishers
   resources :authors do
@@ -10,6 +12,9 @@ Rails.application.routes.draw do
 end
   resources :books do
   resources :bcomments, only: [:index, :create, :destroy]
+      collection do
+      get :mywishlist
+    end
   end
   
 end

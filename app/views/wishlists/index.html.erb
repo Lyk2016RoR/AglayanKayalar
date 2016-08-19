@@ -1,0 +1,6 @@
+<% @wishlists.each do |wish| %>
+	<p><b>Name: </b><%= link_to wish.book.name, book_path(wish.book_id) %>
+	   <b>Author:</b> <%= wish.book.author.name %>
+	   <b>Category: </b> <%= wish.book.category.title %>
+<%end%>
+<br/>

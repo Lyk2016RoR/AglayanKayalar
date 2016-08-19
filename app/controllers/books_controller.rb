@@ -6,6 +6,9 @@ class BooksController < ApplicationController
   		@books = Book.all
   	end
 
+  def mywishlist
+    @books = current_user.wishes
+  end
   	def show
   	end
 
