@@ -21,6 +21,13 @@
       <li><%= link_to "Login", new_user_session_path, class: 'btn btn-success' %></li>
       <li><%= link_to "Register", new_user_registration_path,  class: 'btn btn-success' %></li>
     <% end %>
+
+    <%= link_to "Books", books_path%> 
+    <%= link_to "Categories", categories_path%>
+    <%= link_to "İnterpreters", interpreters_path%>
+    <%= link_to "Authors", authors_path%>
+    <%= link_to "Publishers", publishers_path%>
+   <br/><br/><br/>
     <%= render "flash" %>
     <%= yield %>
   </body>
