@@ -1,3 +1,4 @@
+<center> <h3>Okunacak Pirinçler</h3>
 <% @books.each do |book| %>
 	<p><b>Name: </b><%= link_to book.name, book_path(book) %>
 	   <b>Description:</b> <%= book.description %>
@@ -10,3 +11,4 @@
 <% if current_editor.present? %>
 <%= link_to "Create new book", new_book_path %>
 <%end%>
+</center>
