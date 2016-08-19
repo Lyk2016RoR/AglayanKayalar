@@ -1,0 +1,13 @@
+<b>Name: </b><%= link_to @book.name, book_path(@book) %>
+<b>Description:</b> <%= @book.description %>
+<b>Category: </b> <%= @book.category.title %>
+<b>Author: </b><%= link_to @book.author.name, author_path(@book.author_id) %>
+<b>İnterpreter:</b> <%= @book.interpreter.name %>
+<b>Page Count: </b> <%= @book.page_count %>
+<b>Publisher </b><%= link_to @book.publisher.name, publisher_path(@book.publisher_id) %>
+<b>ISBN:</b> <%= @book.ISBN %>
+<b>Publication Year: </b> <%= @book.publication_year %>
+
+<% if current_editor.present? %>
+<%= link_to "Delete author", book_path(@book), method: :delete, data:{confirm: "Emin misiniz?"} %>
+<%end%>

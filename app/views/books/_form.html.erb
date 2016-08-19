@@ -1,0 +1,18 @@
+<%= form_for @book do |book| %>
+	<p><%= book.label :name %><br/>
+	<%= book.text_field :name, placeholder: 'name' %><br/><br/>
+	<%= book.label :description %><br/>
+	<%= book.text_area :description, placeholder: 'Summary', rows: 10 %><br/><br/>
+	<%= book.label :page_count %><br/>
+	<%= book.text_field :page_count, placeholder: 'page_count'%><br/><br/>
+	<%= book.label :publication_year %><br/>
+	<%= book.text_field :publication_year, placeholder: 'publication_year'%><br/><br/>
+	<%= book.label :ISBN %><br/>
+	<%= book.text_field :ISBN, placeholder: 'ISBN'%><br/><br/>
+	<%= book.select :category_id, @categories %><br><br>
+	<%= book.select :author_id, @authors %><br><br>
+	<%= book.select :publisher_id, @publishers %><br><br>
+	<%= book.select :interpreter_id, @interpreters %><br><br>
+	</p>
+	<%= book.submit 'Gonder'%>
+<%end%>
